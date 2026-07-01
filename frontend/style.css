@@ -1,0 +1,24 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: system-ui, sans-serif;
+}
+
+#profil {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
+    margin-top: 15px;
+    max-width: 350px;
+}
+
+#profil p {
+    color: #aaa;
+}
+
