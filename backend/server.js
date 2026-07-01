@@ -10,7 +10,7 @@ app.get('/api/status', (req, res) => {
 
 app.get('/api/about', (req, res) => {
     res.json({
-        name: "Samuel z HNP",
+        name: "Samuel Kováč",
         role: "Fullstack Developer"
     });
 });
