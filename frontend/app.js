@@ -28,6 +28,9 @@ nacitajData();
     })
     const data = await response.json();
     console.log("Správa bola úspešne prijatá");
+    document.getElementById("spravaOdpoved").innerHTML = `<p style="color: green;">Tvoja správa bola úspešne odoslaná!</p>`;
+    document.getElementById("first_name").value = "";
+    document.getElementById("formText").value = "";
     } catch (error) {
         console.log("Správu sa nedodarilo prijať", error);
     }
