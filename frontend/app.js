@@ -26,11 +26,18 @@ nacitajData();
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name: meno, message: text })
     })
-    const data = await response.json();
+    const errorData = await response.json();
+    if (!response.ok) {
+        console.log("Chyba pri odosielaní správy:", errorData.error);
+        document.getElementById("spravaOdpoved").innerHTML = `<p style="color: red;">${errorData.error}</p>`;
+        return;
+    }
+    else {
     console.log("Správa bola úspešne prijatá");
     document.getElementById("spravaOdpoved").innerHTML = `<p style="color: green;">Tvoja správa bola úspešne odoslaná!</p>`;
     document.getElementById("first_name").value = "";
     document.getElementById("formText").value = "";
+    }
     } catch (error) {
         console.log("Správu sa nedodarilo prijať", error);
     }

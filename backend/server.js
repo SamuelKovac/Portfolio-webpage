@@ -17,6 +17,13 @@ app.get('/api/about', (req, res) => {
 });
 
 app.post('/api/contact', (req, res) => {
+    if (!req.body.name?.trim() || !req.body.message?.trim()) {  
+        return res.status(400).json(
+            {
+                error: "Meno aj správa sú povinné polia!"
+            }
+        )
+    }
     const {name, message} = req.body;
     console.log("Cele telo požiadavky:", req.body);
     console.log("Správa bola prijatá", name, message);
